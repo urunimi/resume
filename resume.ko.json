@@ -1,0 +1,193 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/schema.json",
+  "basics": {
+    "name": "유병우",
+    "label": "CTO / Software Engineer",
+    "email": "hovan@hovans.com",
+    "phone": "010-8313-6313",
+    "url": "https://linkedin.com/in/urunimi",
+    "summary": "대학교 시절, \"너희는 학비를 덜 내고 최고 수준의 교육을 받았기 때문에 국가와 국민에 헌신해야 한다.\"는 교수님의 말씀에 감명 받아 전세계 사람들의 삶을 편리하게 만들고 싶다는 신념으로 전세계에서 6억명이 쓰는 라인 메신저의 핵심 개발자로 활약했으며 미국에서의 창업과 엑싯 경험, 그리고 국내 최고의 에듀테크 기업에서 AI 랩장을 거쳐 데이터라이즈에서 CTO 역할을 담당하고 있습니다.",
+    "location": {
+      "address": "서초구 신반포로 270, 101-102",
+      "city": "서울",
+      "countryCode": "KR"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "",
+        "url": "https://linkedin.com/in/urunimi"
+      },
+      {
+        "network": "GitHub",
+        "username": "",
+        "url": "https://github.com/urunimi"
+      },
+      {
+        "network": "Blog",
+        "username": "",
+        "url": "https://urunimi.github.io"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "데이터라이즈",
+      "position": "CTO",
+      "url": "https://www.datarize.ai/",
+      "startDate": "2025-06-01",
+      "endDate": "2025-06-02",
+      "summary": "ECommerce CRM SaaS",
+      "highlights": [
+        "전사 AX 전환 리딩 및 AI 해커톤 추진으로 총 3개의 AI 제품 릴리즈",
+        "일반 및 특수 개발 포지션 채용 및 온보딩 (JS SDK Engineer, AI Engineer 등)"
+      ]
+    },
+    {
+      "name": "매스프레소",
+      "position": "VP of Engineering / AI Lab Lead",
+      "url": "https://mathpresso.com/",
+      "startDate": "2021-02-01",
+      "endDate": "2025-05-31",
+      "summary": "AI 기반 수학풀이 검색 플랫폼 '콴다' 운영사",
+      "highlights": [
+        "미래엔, 비상교육, YBM에서 사용되는 AI 디지털 교과서 개발 및 사업 리딩 (2023.02 – 현재)",
+        "다수의 AI 연구소 프로젝트 리딩 (ML, 검색, 계산기 & DB) (2021.02 – 2023.02)",
+        "검색 및 ML 서비스 도메인 기반 재설계 및 인프라 비용 절감 (50% 이상)"
+      ]
+    },
+    {
+      "name": "카사코리아",
+      "position": "VP of Engineering",
+      "url": "https://www.kasa.co.kr/",
+      "startDate": "2020-02-01",
+      "endDate": "2021-02-28",
+      "summary": "블록체인 기반 부동산 수익증권 투자 및 거래 플랫폼 '카사' 운영사",
+      "highlights": [
+        "API 서버 및 거래 엔진의 다양한 기능 개발 및 리뷰 총괄"
+      ]
+    },
+    {
+      "name": "버즈빌",
+      "position": "Backend Team Lead",
+      "url": "https://www.buzzvil.com/",
+      "startDate": "2017-01-01",
+      "endDate": "2020-02-29",
+      "summary": "세계 최대 스마트폰 잠금 화면 광고 플랫폼 '버즈스크린' 운영사 (매일 200만 명 이상 사용)",
+      "highlights": [
+        "버즈스크린의 광고 및 콘텐츠 할당 로직 개발 총괄",
+        "검색 서비스 최적화로 인프라 비용을 1/4로 절약하고 더 빠른 응답 제공",
+        "소프트웨어 아키텍트로서 서비스 다운타임 없이 Clean architecture & DDD로 견고하고 지속 가능한 마이크로 서비스를 구축할 수 있도록 다른 엔지니어들을 지도"
+      ]
+    },
+    {
+      "name": "Slidejoy",
+      "position": "Co-founder",
+      "url": "https://techcrunch.com/2017/01/20/buzzvil-acquires-slidejoy/",
+      "startDate": "2014-09-01",
+      "endDate": "2017-01-31",
+      "summary": "미국 기반 스타트업 (버즈빌에 인수합병)",
+      "highlights": [
+        "손익분기점(BEP) 넘기고 투자 유치 중 인수 합병 (TechCrunch 보도)",
+        "Ad network 활용한 서비스 설계 및 클라이언트 개발, 백엔드 Spring boot 전환"
+      ]
+    },
+    {
+      "name": "네이버",
+      "position": "Senior Software Engineer",
+      "url": "https://navercorp.com/",
+      "startDate": "2011-12-01",
+      "endDate": "2015-03-31",
+      "summary": "LINE 메신저 핵심 개발자",
+      "highlights": [
+        "라인의 핵심 라이브러리 중 하나인 NNI(NHN Notification Infra) 담당으로 전송률 향상 (75% → 99.5%) 및 핵심 개발자로 다수의 해외 출장 및 현지 디버깅 경험",
+        "세계적인 네트워크 라이브러리 Netty의 안드로이드 버전을 개발해서 오픈소스로 기여",
+        "여러 개발자가 협업을 잘할 수 있는 소프트웨어 설계(MVP)를 도입해서 팀 퍼포먼스를 크게 향상"
+      ]
+    },
+    {
+      "name": "인포뱅크 / 도전하는사람들",
+      "position": "Software Engineer",
+      "url": "https://www.infobank.co.kr/",
+      "startDate": "2008-05-01",
+      "endDate": "2011-12-31",
+      "summary": "병역특례로 인포뱅크와 도전하는사람들에서 근무",
+      "highlights": [
+        "m&Talk, 삼성 챗온 개발 참여"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "서울대학교",
+      "url": "https://snu.ac.kr/",
+      "area": "전기공학부 (부전공. 경영학부)",
+      "studyType": "학사",
+      "startDate": "2003-03-01",
+      "endDate": "2008-02-28"
+    },
+    {
+      "institution": "대원외국어고등학교",
+      "url": "http://www.dwfl.hs.kr/",
+      "area": "독어과",
+      "studyType": "고등학교",
+      "startDate": "2000-03-01",
+      "endDate": "2001-11-30"
+    }
+  ],
+  "skills": [
+    {
+      "name": "리더십",
+      "level": "Expert",
+      "keywords": [
+        "AI Lab",
+        "CTO",
+        "VP of Engineering",
+        "Backend Team Lead"
+      ]
+    },
+    {
+      "name": "서버 백엔드 개발",
+      "level": "Expert",
+      "keywords": [
+        "Fast API",
+        "Spring Boot",
+        "Elasticsearch"
+      ]
+    },
+    {
+      "name": "AI 서비스 개발",
+      "level": "Expert",
+      "keywords": [
+        "RAG",
+        "LLM",
+        "Agents"
+      ]
+    },
+    {
+      "name": "지속가능한 설계",
+      "level": "Expert",
+      "keywords": [
+        "Clean Architecture",
+        "DDD"
+      ]
+    },
+    {
+      "name": "안드로이드 & 웹 개발",
+      "level": "Intermediate",
+      "keywords": []
+    },
+    {
+      "name": "인프라 운영",
+      "level": "Intermediate",
+      "keywords": []
+    }
+  ],
+  "languages": [],
+  "projects": [],
+  "awards": [],
+  "publications": [],
+  "volunteer": [],
+  "interests": [],
+  "references": []
+}

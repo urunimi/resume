@@ -1,0 +1,193 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/schema.json",
+  "basics": {
+    "name": "Byungwoo Yoo",
+    "label": "CTO / Software Engineer",
+    "email": "hovan@hovans.com",
+    "phone": "010-8313-6313",
+    "url": "https://linkedin.com/in/urunimi",
+    "summary": "Inspired by my professor's words, 'You should dedicate yourself to the country and its people because you received the best education at a lower cost,' I have been driven to make people's lives more convenient worldwide. As a core developer of LINE Messenger, used by 600 million people globally, and through my startup experience in the US and my role as AI Lab Lead at a top EdTech company in Korea, I am currently serving as CTO at Datarize.",
+    "location": {
+      "address": "Seocho-gu, Sinbanpo-ro 270, 101-102",
+      "city": "Seoul",
+      "countryCode": "KR"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "",
+        "url": "https://linkedin.com/in/urunimi"
+      },
+      {
+        "network": "GitHub",
+        "username": "",
+        "url": "https://github.com/urunimi"
+      },
+      {
+        "network": "Blog",
+        "username": "",
+        "url": "https://urunimi.github.io"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Datarize",
+      "position": "CTO",
+      "url": "https://www.datarize.ai/",
+      "startDate": "2025-06-01",
+      "endDate": "2025-06-02",
+      "summary": "ECommerce CRM SaaS",
+      "highlights": [
+        "Led the company-wide AX transition and AI hackathon, resulting in the release of three AI products",
+        "Hired and onboarded general and special development positions (JS SDK Engineer, AI Engineer, etc.)"
+      ]
+    },
+    {
+      "name": "Mathpresso",
+      "position": "VP of Engineering / AI Lab Lead",
+      "url": "https://mathpresso.com/",
+      "startDate": "2021-02-01",
+      "endDate": "2025-05-31",
+      "summary": "Operator of QANDA, an AI-based math problem-solving search platform",
+      "highlights": [
+        "Developed and led the business of AI digital textbooks used by Mirae N, Visang, and YBM (2023.02 – present)",
+        "Led multiple AI research projects (ML, search, calculator & DB) (2021.02 – 2023.02)",
+        "Redesigned search and ML services based on domain-driven design, reducing infrastructure costs by over 50%"
+      ]
+    },
+    {
+      "name": "Kasa Korea",
+      "position": "VP of Engineering",
+      "url": "https://www.kasa.co.kr/",
+      "startDate": "2020-02-01",
+      "endDate": "2021-02-28",
+      "summary": "Operator of Kasa, a blockchain-based real estate revenue investment and trading platform",
+      "highlights": [
+        "Developed and reviewed various functions of the API server and trading engine"
+      ]
+    },
+    {
+      "name": "Buzzvil",
+      "position": "Backend Team Lead",
+      "url": "https://www.buzzvil.com/",
+      "startDate": "2017-01-01",
+      "endDate": "2020-02-29",
+      "summary": "Operator of Buzzscreen, the world's largest smartphone lock screen advertising platform (used by over 2 million people daily)",
+      "highlights": [
+        "Developed the ad and content allocation logic for Buzzscreen",
+        "Optimized the search service, reducing infrastructure costs to a quarter and providing faster responses",
+        "As a software architect, guided other engineers to build robust and sustainable microservices using Clean Architecture and DDD without service downtime"
+      ]
+    },
+    {
+      "name": "Slidejoy",
+      "position": "Co-founder",
+      "url": "https://techcrunch.com/2017/01/20/buzzvil-acquires-slidejoy/",
+      "startDate": "2014-09-01",
+      "endDate": "2017-01-31",
+      "summary": "US-based startup (acquired by Buzzvil)",
+      "highlights": [
+        "Reached break-even point and secured investment before being acquired (reported by TechCrunch)",
+        "Designed and developed the service using ad networks and client development, and transitioned the backend to Spring Boot"
+      ]
+    },
+    {
+      "name": "NAVER",
+      "position": "Senior Software Engineer",
+      "url": "https://navercorp.com/",
+      "startDate": "2011-12-01",
+      "endDate": "2015-03-31",
+      "summary": "Core developer of LINE Messenger",
+      "highlights": [
+        "Improved transmission rates (75% → 99.5%) as the developer in charge of NNI (NHN Notification Infra), a core library of LINE, and gained experience with multiple overseas trips and on-site debugging",
+        "Developed and contributed to the Android version of the global network library Netty as open-source",
+        "Introduced software design (MVP) that enables multiple developers to collaborate effectively, significantly enhancing team performance"
+      ]
+    },
+    {
+      "name": "InfoBank / Dojeonhaneun Saramdeul",
+      "position": "Software Engineer",
+      "url": "https://www.infobank.co.kr/",
+      "startDate": "2008-05-01",
+      "endDate": "2011-12-31",
+      "summary": "Worked at InfoBank and Dojeonhaneun Saramdeul as an alternative to military service",
+      "highlights": [
+        "Participated in the development of m&Talk and Samsung ChatON"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Seoul National University",
+      "url": "https://snu.ac.kr/",
+      "area": "Department of Electrical Engineering (double major in Business Administration)",
+      "studyType": "Bachelor's degree",
+      "startDate": "2003-03-01",
+      "endDate": "2008-02-28"
+    },
+    {
+      "institution": "Daewon Foreign Language High School",
+      "url": "http://www.dwfl.hs.kr/",
+      "area": "German Language Department",
+      "studyType": "High school",
+      "startDate": "2000-03-01",
+      "endDate": "2001-11-30"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Leadership",
+      "level": "Expert",
+      "keywords": [
+        "AI Lab",
+        "CTO",
+        "VP of Engineering",
+        "Backend Team Lead"
+      ]
+    },
+    {
+      "name": "Server Backend Development",
+      "level": "Expert",
+      "keywords": [
+        "Fast API",
+        "Spring Boot",
+        "Elasticsearch"
+      ]
+    },
+    {
+      "name": "AI Service Development",
+      "level": "Expert",
+      "keywords": [
+        "RAG",
+        "LLM",
+        "Agents"
+      ]
+    },
+    {
+      "name": "Sustainable Design",
+      "level": "Expert",
+      "keywords": [
+        "Clean Architecture",
+        "DDD"
+      ]
+    },
+    {
+      "name": "Android & Web Development",
+      "level": "Intermediate",
+      "keywords": []
+    },
+    {
+      "name": "Infrastructure Operation",
+      "level": "Intermediate",
+      "keywords": []
+    }
+  ],
+  "languages": [],
+  "projects": [],
+  "awards": [],
+  "publications": [],
+  "volunteer": [],
+  "interests": [],
+  "references": []
+}
