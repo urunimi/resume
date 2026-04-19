@@ -57,6 +57,25 @@ async function fileExists(p) {
   }
 }
 
+function adaptResumeForThemes(resume) {
+  const r = structuredClone(resume);
+  if (r.basics && r.basics.url && !r.basics.website) {
+    r.basics.website = r.basics.url;
+  }
+  for (const w of r.work ?? []) {
+    if (w.name && !w.company) w.company = w.name;
+    if (w.url && !w.website) w.website = w.url;
+  }
+  for (const v of r.volunteer ?? []) {
+    if (v.organization && !v.company) v.company = v.organization;
+    if (v.url && !v.website) v.website = v.url;
+  }
+  for (const e of r.education ?? []) {
+    if (e.url && !e.website) e.website = e.url;
+  }
+  return r;
+}
+
 async function loadTheme(name) {
   const mod = await import(name);
   const theme = mod.default ?? mod;
@@ -66,10 +85,23 @@ async function loadTheme(name) {
   return theme;
 }
 
+const PRINT_OVERRIDE_CSS = `
+  .left-column {
+    float: right !important;
+    margin-left: 20px !important;
+    margin-right: 0 !important;
+  }
+  @media print {
+    .container, .work-container { page-break-inside: auto !important; }
+    .work-container .item, .item { page-break-inside: avoid; }
+  }
+`;
+
 async function renderPdf(browser, html, outPath) {
   const page = await browser.newPage();
   try {
     await page.setContent(html, { waitUntil: 'networkidle0' });
+    await page.addStyleTag({ content: PRINT_OVERRIDE_CSS });
     await page.pdf({ ...PDF_OPTIONS, path: outPath });
   } finally {
     await page.close();
@@ -114,7 +146,7 @@ async function main() {
   try {
     for (const { lang, src } of resumes) {
       const resume = JSON.parse(await fs.readFile(src, 'utf-8'));
-      const html = await theme.render(resume);
+      const html = await theme.render(adaptResumeForThemes(resume));
       const outPath = path.resolve(OUTPUT_DIR, `resume-${lang}.pdf`);
       console.log(`Rendering ${lang} → ${path.relative(process.cwd(), outPath)}`);
       await renderPdf(browser, html, outPath);

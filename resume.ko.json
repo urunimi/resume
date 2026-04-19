@@ -37,10 +37,11 @@
       "url": "https://www.datarize.ai/",
       "startDate": "2025-06-01",
       "endDate": "2025-06-02",
-      "summary": "ECommerce CRM SaaS",
+      "summary": "이커머스 운영사들을 위한 CRM SaaS 플랫폼",
       "highlights": [
+        "BE, FE, Data, QA, SDK Chapter 에 대해 기술 로드맵 수립과 채용 및 조직 관리",
         "전사 AX 전환 리딩 및 AI 해커톤 추진으로 총 3개의 AI 제품 릴리즈",
-        "일반 및 특수 개발 포지션 채용 및 온보딩 (JS SDK Engineer, AI Engineer 등)"
+        "Enterprise 향 API 설계 및 개발"
       ]
     },
     {
@@ -142,8 +143,8 @@
       "keywords": [
         "AI Lab",
         "CTO",
-        "VP of Engineering",
-        "Backend Team Lead"
+        "VP",
+        "Team Lead"
       ]
     },
     {
@@ -173,12 +174,16 @@
       ]
     },
     {
-      "name": "안드로이드 & 웹 개발",
+      "name": "인프라 운영",
       "level": "Intermediate",
-      "keywords": []
+      "keywords": [
+        "AWS",
+        "GCP",
+        "Azure"
+      ]
     },
     {
-      "name": "인프라 운영",
+      "name": "안드로이드 & 웹 개발",
       "level": "Intermediate",
       "keywords": []
     }
