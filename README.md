@@ -1,17 +1,6 @@
 # resume
 
-JSON Resume 기반 이력서 — 한국어 원본을 LLM으로 영문 자동 번역하고 PDF로 빌드. 태그 push 하면 GitHub Release에 PDF 첨부.
-
-## 사전 준비
-
-- Node.js 20+
-- [Groq API key](https://console.groq.com/keys) (무료)
-
-```bash
-cp .env.example .env
-# .env 를 열어 GROQ_API_KEY=... 채우기
-make install
-```
+JSON Resume 기반 이력서 — 한국어 원본을 LLM으로 영문 자동 번역하고 PDF로 빌드
 
 ## 주요 명령어
 
@@ -31,13 +20,7 @@ make help              # 전체 타겟 목록
 
 ## 릴리스
 
-`v*` 패턴의 태그를 push 하면 GitHub Actions 가 PDF를 빌드해서 Release 에 첨부한다.
-
-```bash
-make release VERSION=v0.1.0
-# 또는 직접:
-git tag v0.1.0 && git push origin v0.1.0
-```
+`main` 에 `resume.*.json` 변경이 push 되면 GitHub Actions 가 PDF를 빌드해서 `latest` Release 를 갱신한다.
 
 ## 스택
 

@@ -2,8 +2,10 @@ name: Build and Release PDF
 
 on:
   push:
-    tags:
-      - 'v*'
+    branches:
+      - main
+    paths:
+      - 'resume.*.json'
 
 jobs:
   release:
@@ -28,10 +30,11 @@ jobs:
       - name: Build PDFs
         run: npm run build:pdf
 
-      - name: Create Release
+      - name: Update latest Release
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: latest
+          name: latest
           files: |
             output/resume-ko.pdf
             output/resume-en.pdf
-          generate_release_notes: true

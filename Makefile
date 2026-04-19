@@ -1,4 +1,4 @@
-.PHONY: help install translate pdf build clean release
+.PHONY: help install translate pdf build clean theme
 
 help:
 	@echo "Targets:"
@@ -7,7 +7,7 @@ help:
 	@echo "  make pdf              - Build PDFs (ko, en)"
 	@echo "  make build            - Translate + build PDFs"
 	@echo "  make clean            - Remove output/ and resume.en.json"
-	@echo "  make release VERSION=v0.1.0 - Tag and push to trigger GitHub Release"
+	@echo "  make theme THEME=elegant - Swap to jsonresume-theme-<THEME>"
 
 install:
 	npm install
@@ -23,9 +23,13 @@ build: translate pdf
 clean:
 	rm -rf output resume.en.json
 
-release:
-ifndef VERSION
-	$(error VERSION is required, e.g. `make release VERSION=v0.1.0`)
+theme:
+ifndef THEME
+	$(error THEME is required, e.g. `make theme THEME=elegant`)
 endif
-	git tag $(VERSION)
-	git push origin $(VERSION)
+	@current=$$(npm pkg get config.theme | tr -d '"'); \
+		if [ -n "$$current" ] && [ "$$current" != "jsonresume-theme-$(THEME)" ]; then \
+			npm uninstall $$current; \
+		fi
+	npm install jsonresume-theme-$(THEME)
+	npm pkg set config.theme=jsonresume-theme-$(THEME)
