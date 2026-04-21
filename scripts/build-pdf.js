@@ -91,6 +91,27 @@ const PRINT_OVERRIDE_CSS = `
     margin-left: 20px !important;
     margin-right: 0 !important;
   }
+  .right-column {
+    overflow: visible !important;
+  }
+  .section-header {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .section-header .pull-left {
+    float: none !important;
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  .section-header .pull-right {
+    float: none !important;
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
   @media print {
     .container, .work-container { page-break-inside: auto !important; }
     .work-container .item, .item { page-break-inside: avoid; }

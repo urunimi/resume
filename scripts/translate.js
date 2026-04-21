@@ -15,7 +15,7 @@ Translate the provided Korean JSON Resume content to English according to these 
    - All JSON keys
    - basics.name — transliterate Hangul to romanized English (e.g. "유병우" → "Byungwoo Yoo")
    - basics.email, basics.phone, basics.url
-   - work[].name — romanize Korean company names (e.g. "데이터라이즈" → "Datarize", "매스프레소" → "Mathpresso", "카사코리아" → "Kasa Korea", "버즈빌" → "Buzzvil", "네이버" → "NAVER", "인포뱅크" → "InfoBank")
+   - work[].name — romanize Korean company names (e.g. "데이터라이즈" → "Datarize", "매스프레소" → "Mathpresso", "카사코리아" → "Kasa Korea", "버즈빌" → "Buzzvil", "네이버" → "NAVER", "인포뱅크" → "InfoBank", "도전하는사람들" → "DOSA")
    - education[].institution (e.g. "서울대학교" → "Seoul National University", "대원외국어고등학교" → "Daewon Foreign Language High School")
    - Technology/library names (Netty, Spring Boot, DDD, Clean Architecture, ML, etc.)
    - All dates, URLs, emails, usernames, profile network names
@@ -84,7 +84,7 @@ function stripCodeFence(text) {
 async function translate(groq, koJson) {
   const completion = await groq.chat.completions.create({
     model: MODEL,
-    temperature: 0.3,
+    temperature: 0.1,
     response_format: { type: 'json_object' },
     messages: [
       { role: 'system', content: SYSTEM_PROMPT },

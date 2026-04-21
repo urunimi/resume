@@ -36,12 +36,12 @@
       "position": "CTO",
       "url": "https://www.datarize.ai/",
       "startDate": "2025-06-01",
-      "endDate": "2025-06-02",
+      "endDate": "2026-06-02",
       "summary": "이커머스 운영사들을 위한 CRM SaaS 플랫폼",
       "highlights": [
         "BE, FE, Data, QA, SDK Chapter 에 대해 기술 로드맵 수립과 채용 및 조직 관리",
-        "전사 AX 전환 리딩 및 AI 해커톤 추진으로 총 3개의 AI 제품 릴리즈",
-        "Enterprise 향 API 설계 및 개발"
+        "전사 AX 전환 리딩 및 AI 해커톤 추진으로 총 3개의 AI 제품 런칭",
+        "Enterprise 향 API 설계 및 기술 세일즈"
       ]
     },
     {
@@ -52,7 +52,7 @@
       "endDate": "2025-05-31",
       "summary": "AI 기반 수학풀이 검색 플랫폼 '콴다' 운영사",
       "highlights": [
-        "미래엔, 비상교육, YBM에서 사용되는 AI 디지털 교과서 개발 및 사업 리딩 (2023.02 – 현재)",
+        "미래엔, 비상교육, YBM에서 사용되는 AI 디지털 교과서 개발 및 사업으로 유일한 흑자 사업부 리딩(2023.02 – 2025.05)",
         "다수의 AI 연구소 프로젝트 리딩 (ML, 검색, 계산기 & DB) (2021.02 – 2023.02)",
         "검색 및 ML 서비스 도메인 기반 재설계 및 인프라 비용 절감 (50% 이상)"
       ]
@@ -65,7 +65,7 @@
       "endDate": "2021-02-28",
       "summary": "블록체인 기반 부동산 수익증권 투자 및 거래 플랫폼 '카사' 운영사",
       "highlights": [
-        "API 서버 및 거래 엔진의 다양한 기능 개발 및 리뷰 총괄"
+        "API 서버 및 거래 엔진의 다양한 기능 개발 총괄을 통한 서비스 출시"
       ]
     },
     {
@@ -77,7 +77,7 @@
       "summary": "세계 최대 스마트폰 잠금 화면 광고 플랫폼 '버즈스크린' 운영사 (매일 200만 명 이상 사용)",
       "highlights": [
         "버즈스크린의 광고 및 콘텐츠 할당 로직 개발 총괄",
-        "검색 서비스 최적화로 인프라 비용을 1/4로 절약하고 더 빠른 응답 제공",
+        "검색 최적화로 인프라 비용을 1/4로 절약하고 더 빠른 응답 제공",
         "소프트웨어 아키텍트로서 서비스 다운타임 없이 Clean architecture & DDD로 견고하고 지속 가능한 마이크로 서비스를 구축할 수 있도록 다른 엔지니어들을 지도"
       ]
     },
@@ -90,7 +90,7 @@
       "summary": "미국 기반 스타트업 (버즈빌에 인수합병)",
       "highlights": [
         "손익분기점(BEP) 넘기고 투자 유치 중 인수 합병 (TechCrunch 보도)",
-        "Ad network 활용한 서비스 설계 및 클라이언트 개발, 백엔드 Spring boot 전환"
+        "Ad network 활용한 서비스 설계 및 클라이언트 개발, 백엔드 Spring boot 도입"
       ]
     },
     {
@@ -131,7 +131,6 @@
       "institution": "대원외국어고등학교",
       "url": "http://www.dwfl.hs.kr/",
       "area": "독어과",
-      "studyType": "고등학교",
       "startDate": "2000-03-01",
       "endDate": "2001-11-30"
     }
@@ -142,9 +141,7 @@
       "level": "Expert",
       "keywords": [
         "AI Lab",
-        "CTO",
-        "VP",
-        "Team Lead"
+        "CTO"
       ]
     },
     {
@@ -188,11 +185,40 @@
       "keywords": []
     }
   ],
-  "languages": [],
+  "languages": [
+    {
+      "language": "한국어",
+      "fluency": "원어민"
+    },
+    {
+      "language": "영어",
+      "fluency": "유창함"
+    }
+  ],
   "projects": [],
   "awards": [],
-  "publications": [],
-  "volunteer": [],
+  "publications": [
+    {
+      "name": "Explain with Visual Keypoints Like a Real Mentor! A Benchmark for Multimodal Solution Explanation",
+      "publisher": "AAAI 2026 (arXiv:2504.03197)",
+      "releaseDate": "2025-04-04",
+      "url": "https://arxiv.org/abs/2504.03197",
+      "summary": "수학 문제 풀이 설명에서 보조선·점·각도 등 시각적 keypoint를 식별하고 설명에 반영하는 멀티모달 벤치마크(MathExplain) 제안. 공저."
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "경기도",
+      "position": "경제투자 분과장",
+      "url": "https://www.gg.go.kr/",
+      "startDate": "2024-09-24",
+      "endDate": "2026-05-07",
+      "summary": "경기도의 AI 정책 및 기술 자문",
+      "highlights": [
+        "경기도 생성형 AI 구축 사업 자문 및 기술 검수"
+      ]
+    }
+  ],
   "interests": [],
   "references": []
 }
