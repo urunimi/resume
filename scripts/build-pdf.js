@@ -85,14 +85,81 @@ async function loadTheme(name) {
   return theme;
 }
 
+// NOTE on macchiato class names (they're inverted from visual position):
+//   .left-column  = <aside> with About/Skills/Education/Languages — visually on the RIGHT
+//   .right-column = main content (Work/Volunteer/Publications)    — visually on the LEFT
 const PRINT_OVERRIDE_CSS = `
+  /* Match Summary's full-width horizontal extent by zeroing resume-content padding */
+  .page .resume-header,
+  .page .resume-content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  /* Switch two-column layout from floats to flexbox so main column
+     never spills into sidebar width after the sidebar ends */
+  .resume-content {
+    display: flex !important;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    gap: 20px;
+  }
   .left-column {
-    float: right !important;
-    margin-left: 20px !important;
-    margin-right: 0 !important;
+    float: none !important;
+    flex: 0 0 160px !important;
+    margin: 0 !important;
   }
   .right-column {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
     overflow: visible !important;
+  }
+  /* Summary spans full width above both columns */
+  .summary-container.top-summary {
+    margin-bottom: 15px;
+  }
+  /* Education dates: left-aligned below name, tight spacing (matches Expert style) */
+  .education-container .section-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+  }
+  .education-container .section-header .pull-right {
+    align-self: flex-start !important;
+    text-align: left !important;
+    width: auto !important;
+    margin: 0 !important;
+    font-size: 11px !important;
+    font-weight: 300 !important;
+    font-style: italic !important;
+    line-height: 1.2 !important;
+  }
+  /* Skills hierarchy: mirror Experience → Education structure */
+  /* "Skills" top-level matches Experience/Education container spacing */
+  .skills-container {
+    padding-top: 20px;
+  }
+  /* Inner skill sections: not top-level, no extra padding */
+  .skills-container > section.container {
+    padding-top: 0 !important;
+  }
+  .skills-container > section + section {
+    margin-top: 12px;
+  }
+  /* Skill category (리더십) = 데이터라이즈/서울대학교 = h3.bold, no keyline */
+  .skills-container > section > .title h3 {
+    font-weight: 700;
+  }
+  .skills-container > section > .title .keyline {
+    display: none;
+  }
+  /* Skill level (Expert/Intermediate) = education date (h5.italic 11px) */
+  .skills-container > section > h4.bold.capitalize {
+    font-family: "Lato", Helvetica, Arial, sans-serif;
+    font-weight: 300 !important;
+    font-style: italic;
+    font-size: 11px !important;
+    text-transform: none !important;
+    margin: 0 !important;
   }
   .section-header {
     display: flex !important;
@@ -123,6 +190,31 @@ async function renderPdf(browser, html, outPath) {
   try {
     await page.setContent(html, { waitUntil: 'networkidle0' });
     await page.addStyleTag({ content: PRINT_OVERRIDE_CSS });
+    await page.evaluate(() => {
+      const resumeContent = document.querySelector('.resume-content');
+      const sidebar = document.querySelector('.left-column');
+      const summary = document.querySelector('.summary-container');
+      if (summary && resumeContent?.parentNode) {
+        summary.classList.add('top-summary');
+        resumeContent.parentNode.insertBefore(summary, resumeContent);
+      }
+      const education = document.querySelector('.education-container');
+      const languages = document.querySelector('.languages-container');
+      if (education) {
+        if (languages?.parentNode) {
+          languages.parentNode.insertBefore(education, languages);
+        } else if (sidebar) {
+          sidebar.appendChild(education);
+        }
+      }
+      const skills = document.querySelector('.skills-container');
+      if (skills && !skills.querySelector(':scope > .title')) {
+        const title = document.createElement('div');
+        title.className = 'title';
+        title.innerHTML = '<h3>Skills</h3><div class="keyline"></div>';
+        skills.insertBefore(title, skills.firstChild);
+      }
+    });
     await page.pdf({ ...PDF_OPTIONS, path: outPath });
   } finally {
     await page.close();
