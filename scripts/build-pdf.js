@@ -113,53 +113,44 @@ const PRINT_OVERRIDE_CSS = `
     min-width: 0 !important;
     overflow: visible !important;
   }
-  /* Summary spans full width above both columns */
+  /* Summary → resume-content gap */
   .summary-container.top-summary {
     margin-bottom: 15px;
   }
-  /* Education dates: left-aligned below name, tight spacing (matches Expert style) */
+  /* Education: stack name/date vertically with tight gap
+     (inherits align-items: flex-start from base .section-header) */
   .education-container .section-header {
     flex-direction: column !important;
-    align-items: flex-start !important;
     justify-content: flex-start !important;
+    gap: 0 !important;
   }
-  .education-container .section-header .pull-right {
-    align-self: flex-start !important;
-    text-align: left !important;
-    width: auto !important;
-    margin: 0 !important;
-    font-size: 11px !important;
-    font-weight: 300 !important;
-    font-style: italic !important;
-    line-height: 1.2 !important;
+  /* Respect \\n in education area/studyType as line breaks */
+  .education-container .item h4 {
+    white-space: pre-line;
   }
-  /* Skills hierarchy: mirror Experience → Education structure */
-  /* "Skills" top-level matches Experience/Education container spacing */
+  /* Skills: skills-container lacks .container class, so replicate its padding */
   .skills-container {
     padding-top: 20px;
   }
-  /* Inner skill sections: not top-level, no extra padding */
   .skills-container > section.container {
     padding-top: 0 !important;
   }
   .skills-container > section + section {
     margin-top: 12px;
   }
-  /* Skill category (리더십) = 데이터라이즈/서울대학교 = h3.bold, no keyline */
+  /* Skill category (리더십) → bold like 데이터라이즈/서울대학교, no keyline */
   .skills-container > section > .title h3 {
     font-weight: 700;
   }
   .skills-container > section > .title .keyline {
     display: none;
   }
-  /* Skill level (Expert/Intermediate) = education date (h5.italic 11px) */
+  /* Skill level (Expert) → h5.italic date style (11px italic light, no capitalize) */
   .skills-container > section > h4.bold.capitalize {
-    font-family: "Lato", Helvetica, Arial, sans-serif;
     font-weight: 300 !important;
     font-style: italic;
     font-size: 11px !important;
     text-transform: none !important;
-    margin: 0 !important;
   }
   .section-header {
     display: flex !important;
@@ -185,12 +176,12 @@ const PRINT_OVERRIDE_CSS = `
   }
 `;
 
-async function renderPdf(browser, html, outPath) {
+async function renderPdf(browser, html, resume, outPath) {
   const page = await browser.newPage();
   try {
     await page.setContent(html, { waitUntil: 'networkidle0' });
     await page.addStyleTag({ content: PRINT_OVERRIDE_CSS });
-    await page.evaluate(() => {
+    await page.evaluate((resume) => {
       const resumeContent = document.querySelector('.resume-content');
       const sidebar = document.querySelector('.left-column');
       const summary = document.querySelector('.summary-container');
@@ -214,7 +205,29 @@ async function renderPdf(browser, html, outPath) {
         title.innerHTML = '<h3>Skills</h3><div class="keyline"></div>';
         skills.insertBefore(title, skills.firstChild);
       }
-    });
+      // Replace each item's title with a plain hyperlink (name → url),
+      // overwriting any theme-provided wrapper (including volunteer's "∙ URL" sublink).
+      const linkify = (containerSel, items, nameKey) => {
+        const container = document.querySelector(containerSel);
+        if (!container || !Array.isArray(items)) return;
+        const itemEls = container.querySelectorAll(':scope > section.item');
+        itemEls.forEach((el, i) => {
+          const entry = items[i];
+          if (!entry?.url || !entry[nameKey]) return;
+          const target = el.querySelector('.section-header .pull-left');
+          if (!target) return;
+          const a = document.createElement('a');
+          a.href = entry.url;
+          a.target = '_blank';
+          a.textContent = entry[nameKey];
+          target.replaceChildren(a);
+        });
+      };
+      linkify('.work-container', resume.work, 'name');
+      linkify('.volunteer-container', resume.volunteer, 'organization');
+      linkify('.education-container', resume.education, 'institution');
+      linkify('.publications-container', resume.publications, 'name');
+    }, resume);
     await page.pdf({ ...PDF_OPTIONS, path: outPath });
   } finally {
     await page.close();
@@ -262,7 +275,7 @@ async function main() {
       const html = await theme.render(adaptResumeForThemes(resume));
       const outPath = path.resolve(OUTPUT_DIR, `resume-${lang}.pdf`);
       console.log(`Rendering ${lang} → ${path.relative(process.cwd(), outPath)}`);
-      await renderPdf(browser, html, outPath);
+      await renderPdf(browser, html, adaptResumeForThemes(resume), outPath);
     }
   } finally {
     await browser.close();

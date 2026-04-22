@@ -6,10 +6,9 @@
     "email": "hovan@hovans.com",
     "phone": "010-8313-6313",
     "url": "https://linkedin.com/in/urunimi",
-    "summary": "Inspired by a professor's words, 'You should dedicate yourself to the country and its people because you received high-quality education at a lower cost,' I have been driven to make people's lives more convenient worldwide. As a core developer of LINE Messenger used by 600 million people globally, I have gained experience in launching a successful product. With my experience in entrepreneurship and exit in the US, as well as leading AI labs at top ed-tech companies in Korea, I am currently serving as CTO at Datarize.",
+    "summary": "Inspired by a professor's words, 'You have received the best education at a lower cost, so you must dedicate yourself to the country and its people,' I have worked as a core developer for LINE Messenger, used by 600 million people worldwide, and have experience in entrepreneurship and exit in the US. I have also led AI labs at top ed-tech companies in Korea and currently serve as CTO at Datarize.",
     "location": {
-      "address": "101-102, 270, Sinbanpo-ro, Seocho-gu",
-      "city": "Seoul",
+      "address": "Seocho-gu, Banpo-ro 270, 101-102, Seoul",
       "countryCode": "KR"
     },
     "profiles": [
@@ -36,11 +35,11 @@
       "position": "CTO",
       "url": "https://www.datarize.ai/",
       "startDate": "2025-06-01",
-      "endDate": "2025-06-02",
-      "summary": "A CRM SaaS platform for e-commerce operators",
+      "endDate": "2026-06-02",
+      "summary": "CRM SaaS platform for e-commerce operators",
       "highlights": [
         "Established technical roadmaps and managed hiring and organization for BE, FE, Data, QA, and SDK chapters",
-        "Led the company's AX transformation and AI hackathon, resulting in the launch of three AI products",
+        "Led AX transformation across the company and drove AI hackathons, resulting in the launch of three AI products",
         "Designed enterprise-oriented APIs and handled technical sales"
       ]
     },
@@ -50,10 +49,10 @@
       "url": "https://mathpresso.com/",
       "startDate": "2021-02-01",
       "endDate": "2025-05-31",
-      "summary": "A company operating the AI-based math problem-solving platform 'QANDA'",
+      "summary": "Operator of QANDA, an AI-based math problem-solving search platform",
       "highlights": [
-        "Led the development of AI-based digital textbooks used by major educational companies, resulting in the only profitable business unit (2023.02 – 2025.05)",
-        "Led multiple AI research projects (ML, search, calculator & DB) (2021.02 – 2023.02)",
+        "Led the only profitable B2B business unit, providing AI solutions to major educational companies such as Mirae, Visang, and YBM",
+        "Led multiple AI research projects, including ML, search, and automatic calculator and content DB development",
         "Redesigned search and ML services based on domain-driven design, reducing infrastructure costs by over 50%"
       ]
     },
@@ -63,21 +62,21 @@
       "url": "https://www.kasa.co.kr/",
       "startDate": "2020-02-01",
       "endDate": "2021-02-28",
-      "summary": "A company operating the blockchain-based real estate investment and trading platform 'Kasa'",
+      "summary": "Operator of Kasa, a blockchain-based real estate investment and trading platform",
       "highlights": [
-        "Oversaw the development of various features for the API server and trading engine, leading to the successful launch of the service"
+        "Oversaw the development of various features for API servers and trading engines, leading to the successful launch of the service"
       ]
     },
     {
       "name": "Buzzvil",
-      "position": "Backend Team Lead",
+      "position": "Team Lead",
       "url": "https://www.buzzvil.com/",
       "startDate": "2017-01-01",
       "endDate": "2020-02-29",
-      "summary": "A company operating the world's largest smartphone lock screen advertising platform 'BuzzScreen' (used by over 2 million people daily)",
+      "summary": "Operator of Buzzscreen, the world's largest smartphone lock screen advertising platform (used by over 2 million people daily)",
       "highlights": [
-        "Led the development of ad and content allocation logic for BuzzScreen",
-        "Optimized search functionality, reducing infrastructure costs by 75% and providing faster response times",
+        "Developed and managed ad and content allocation logic for Buzzscreen",
+        "Optimized search functionality, reducing infrastructure costs by 75% and improving response times",
         "As a software architect, guided other engineers in building robust and sustainable microservices using Clean Architecture and DDD, ensuring zero downtime"
       ]
     },
@@ -87,9 +86,9 @@
       "url": "https://techcrunch.com/2017/01/20/buzzvil-acquires-slidejoy/",
       "startDate": "2014-09-01",
       "endDate": "2017-01-31",
-      "summary": "A US-based startup acquired by Buzzvil",
+      "summary": "US-based startup acquired by Buzzvil",
       "highlights": [
-        "Reached break-even point and secured funding before being acquired (reported by TechCrunch)",
+        "Reached break-even point and secured funding before being acquired",
         "Designed and developed the service using ad networks, and introduced Spring Boot for the backend"
       ]
     },
@@ -99,11 +98,11 @@
       "url": "https://navercorp.com/",
       "startDate": "2011-12-01",
       "endDate": "2015-03-31",
-      "summary": "Core developer of LINE Messenger",
+      "summary": "Core developer for LINE Messenger",
       "highlights": [
-        "Improved transmission rates (75% → 99.5%) as the lead developer of NNI (NHN Notification Infra), a core library for LINE, and gained experience in overseas business trips and on-site debugging",
-        "Developed and contributed to the Android version of the Netty network library as an open-source project",
-        "Introduced MVP software design to enhance team performance"
+        "Improved transmission rates (75% to 99.5%) as the lead developer for NNI (NHN Notification Infra), a core library for LINE, and gained experience with overseas deployments and on-site debugging",
+        "Developed and contributed to the Android version of the Netty network library as open-source",
+        "Introduced MVP software design, significantly enhancing team performance"
       ]
     },
     {
@@ -112,7 +111,7 @@
       "url": "https://www.infobank.co.kr/",
       "startDate": "2008-05-01",
       "endDate": "2011-12-31",
-      "summary": "Worked at InfoBank and DOSA as an alternative to military service",
+      "summary": "Worked at InfoBank and DOSA as part of my military service",
       "highlights": [
         "Participated in the development of m&Talk and Samsung ChatON"
       ]
@@ -131,7 +130,6 @@
       "institution": "Daewon Foreign Language High School",
       "url": "http://www.dwfl.hs.kr/",
       "area": "German Language",
-      "studyType": "High school",
       "startDate": "2000-03-01",
       "endDate": "2001-11-30"
     }
@@ -172,7 +170,7 @@
       ]
     },
     {
-      "name": "Infrastructure Operation",
+      "name": "Infrastructure Operations",
       "level": "Intermediate",
       "keywords": [
         "AWS",
@@ -207,7 +205,19 @@
       "summary": "Proposed a multimodal benchmark (MathExplain) for identifying and explaining visual keypoints in math problem-solving explanations. Co-authored."
     }
   ],
-  "volunteer": [],
+  "volunteer": [
+    {
+      "organization": "Gyeonggi Province",
+      "position": "Provincial Policy Advisor (Economic Investment Division)",
+      "url": "https://www.gg.go.kr/",
+      "startDate": "2024-09-24",
+      "endDate": "2026-05-07",
+      "summary": "Provided AI policy and technical advice to Gyeonggi Province",
+      "highlights": [
+        "Advised on the construction of Gyeonggi Province's generative AI project and conducted technical reviews"
+      ]
+    }
+  ],
   "interests": [],
   "references": []
 }
