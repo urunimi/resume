@@ -9,12 +9,15 @@
     "languages": [
       "ko",
       "en"
-    ]
+    ],
+    "site": "me.hovans.com"
   },
   "scripts": {
     "translate": "node scripts/translate.js",
     "build:pdf": "node scripts/build-pdf.js",
-    "build": "npm run translate && npm run build:pdf",
+    "build:html": "node scripts/build-html.js",
+    "build:site": "npm run build:pdf && npm run build:html",
+    "build": "npm run translate -- --force && npm run build:site",
     "validate": "resumed validate resume.ko.json"
   },
   "dependencies": {

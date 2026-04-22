@@ -1,11 +1,13 @@
-.PHONY: help install translate pdf build clean theme
+.PHONY: help install translate pdf html site build clean theme
 
 help:
 	@echo "Targets:"
 	@echo "  make install          - npm install"
 	@echo "  make translate        - Translate resume.ko.json → resume.en.json (overwrite; use git diff to review)"
 	@echo "  make pdf              - Build PDFs (ko, en)"
-	@echo "  make build            - Translate + build PDFs"
+	@echo "  make html             - Build HTML site (index.html, en/index.html, CNAME)"
+	@echo "  make site             - Build PDFs + HTML"
+	@echo "  make build            - Translate + build site"
 	@echo "  make clean            - Remove output/ and resume.en.json"
 	@echo "  make theme THEME=elegant - Swap to jsonresume-theme-<THEME>"
 
@@ -18,7 +20,13 @@ translate:
 pdf:
 	npm run build:pdf
 
-build: translate pdf
+html:
+	npm run build:html
+
+site:
+	npm run build:site
+
+build: translate site
 
 clean:
 	rm -rf output resume.en.json

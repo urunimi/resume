@@ -1,4 +1,4 @@
-name: Build and Release PDF
+name: Build and Deploy
 
 on:
   push:
@@ -6,13 +6,23 @@ on:
       - main
     paths:
       - 'resume.*.json'
+      - 'scripts/**'
+      - 'package*.json'
+      - '.github/workflows/release.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  release:
+  build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
     steps:
       - uses: actions/checkout@v4
 
@@ -21,14 +31,18 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
-      - name: Install dependencies
-        run: npm ci
+      - run: npm ci
 
       - name: Install Chromium for Puppeteer
         run: npx puppeteer browsers install chrome
 
-      - name: Build PDFs
-        run: npm run build:pdf
+      - name: Build site (PDFs + HTML)
+        run: npm run build:site
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: output
 
       - name: Update latest Release
         uses: softprops/action-gh-release@v2
@@ -38,3 +52,13 @@ jobs:
           files: |
             output/resume-ko.pdf
             output/resume-en.pdf
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
