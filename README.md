@@ -23,11 +23,17 @@ make help              # 전체 타겟 목록
 
 ## 호스팅 / 릴리스
 
-`main` 에 `resume.*.json` 또는 `scripts/**` 변경이 push 되면 GitHub Actions 가:
+### 자동화된 플로우
 
-1. PDF + HTML 빌드
-2. [me.hovans.com](https://me.hovans.com) (GitHub Pages) 배포
-3. `latest` Release 의 PDF 첨부파일 갱신
+`main` 에서 `resume.ko.json` 만 수정 → push 하면:
+
+1. **Translate** workflow 가 `resume.en.json` 을 재생성해서 **PR 로 올림** (브랜치 `auto/translate`)
+2. PR diff 에서 영문 번역을 검토/수정 후 **Merge**
+3. Merge 가 **Deploy** workflow 를 트리거 → PDF + HTML 빌드 → [me.hovans.com](https://me.hovans.com) 배포 + `latest` Release 갱신
+
+즉 GitHub 웹 UI 에서 `resume.ko.json` 편집 → commit → PR 머지만으로 이력서가 갱신된다. 로컬 번역 불필요.
+
+> Deploy 는 `resume.*.json` 변경 시마다 트리거되므로, ko 만 먼저 push 되면 **이전 번역으로 배포 후**, PR 머지 시 **새 번역으로 재배포** 된다 (총 2회). 짧은 stale window 만 감수하면 됨.
 
 ### 최초 1회 설정
 
@@ -36,6 +42,8 @@ make help              # 전체 타겟 목록
 3. 도메인 관리자(가비아/Cloudflare 등)에 DNS CNAME 추가:
    - Type `CNAME`, Name `me`, Value `urunimi.github.io`
    - Cloudflare 는 Proxy OFF (DNS only)
+4. Settings → **Secrets and variables → Actions** → `GROQ_API_KEY` 추가 (번역 workflow 용)
+5. Settings → **Actions → General → Workflow permissions** → "Allow GitHub Actions to create and approve pull requests" 체크
 
 ## 스택
 

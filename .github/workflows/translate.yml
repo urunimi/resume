@@ -1,0 +1,52 @@
+name: Translate
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'resume.ko.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - run: npm ci
+
+      - name: Translate (Groq, temperature 0)
+        run: npm run translate -- --force
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+
+      - name: Open / update translation PR
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: auto/translate
+          delete-branch: true
+          base: main
+          title: 'chore: refresh English translation'
+          commit-message: 'Auto-translate resume.ko.json → resume.en.json'
+          body: |
+            Auto-generated English translation from `resume.ko.json`.
+
+            - Model: `llama-3.3-70b-versatile` via Groq
+            - Temperature: `0`
+            - Source commit: ${{ github.sha }}
+
+            Review the diff and edit freely before merging. Merging this PR triggers the deploy workflow to publish to https://me.hovans.com.
+          add-paths: resume.en.json
+          labels: |
+            translation
+            automated
