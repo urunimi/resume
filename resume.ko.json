@@ -201,8 +201,7 @@
       "name": "Explain with Visual Keypoints Like a Real Mentor! A Benchmark for Multimodal Solution Explanation",
       "publisher": "AAAI 2026 (arXiv:2504.03197)",
       "releaseDate": "2025-04-04",
-      "url": "https://arxiv.org/abs/2504.03197",
-      "summary": "수학 문제 풀이 설명에서 보조선·점·각도 등 시각적 keypoint를 식별하고 설명에 반영하는 멀티모달 벤치마크(MathExplain) 제안. 공저."
+      "url": "https://arxiv.org/abs/2504.03197"
     }
   ],
   "volunteer": [
