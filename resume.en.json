@@ -38,9 +38,9 @@
       "endDate": "2026-06-02",
       "summary": "CRM SaaS platform for e-commerce operators",
       "highlights": [
-        "Established technical roadmaps and managed hiring and organization for BE, FE, Data, QA, and SDK chapters",
-        "Led AX transformation across the company and drove AI hackathons, resulting in the launch of three AI products",
-        "Designed enterprise-oriented APIs and handled technical sales"
+        "Established and managed technical roadmaps for BE, FE, Data, QA, and SDK chapters, and led hiring and organizational management",
+        "Led the company's AX transformation and AI hackathon, resulting in the launch of three AI products",
+        "Designed enterprise-oriented APIs and led technical sales"
       ]
     },
     {
@@ -51,8 +51,8 @@
       "endDate": "2025-05-31",
       "summary": "Operator of QANDA, an AI-based math problem-solving search platform",
       "highlights": [
-        "Led the only profitable B2B business unit, providing AI solutions to major educational companies such as Mirae, Visang, and YBM",
-        "Led multiple AI research projects, including ML, search, and automatic calculator and content DB development",
+        "Led the only profitable B2B AI business unit, used by Mirae N, Visang, and YBM",
+        "Led multiple AI research projects (ML, search, auto calculator, and content DB construction)",
         "Redesigned search and ML services based on domain-driven design, reducing infrastructure costs by over 50%"
       ]
     },
@@ -62,9 +62,9 @@
       "url": "https://www.kasa.co.kr/",
       "startDate": "2020-02-01",
       "endDate": "2021-02-28",
-      "summary": "Operator of Kasa, a blockchain-based real estate investment and trading platform",
+      "summary": "Operator of Kasa, a blockchain-based real estate revenue investment and trading platform",
       "highlights": [
-        "Oversaw the development of various features for API servers and trading engines, leading to the successful launch of the service"
+        "Oversaw the development of various features for API servers and trading engines, leading to the launch of the service"
       ]
     },
     {
@@ -75,8 +75,8 @@
       "endDate": "2020-02-29",
       "summary": "Operator of Buzzscreen, the world's largest smartphone lock screen advertising platform (used by over 2 million people daily)",
       "highlights": [
-        "Developed and managed ad and content allocation logic for Buzzscreen",
-        "Optimized search functionality, reducing infrastructure costs by 75% and improving response times",
+        "Developed and oversaw the ad and content allocation logic for Buzzscreen",
+        "Optimized search functionality, reducing infrastructure costs by 75% and providing faster response times",
         "As a software architect, guided other engineers in building robust and sustainable microservices using Clean Architecture and DDD, ensuring zero downtime"
       ]
     },
@@ -100,8 +100,8 @@
       "endDate": "2015-03-31",
       "summary": "Core developer for LINE Messenger",
       "highlights": [
-        "Improved transmission rates (75% to 99.5%) as the lead developer for NNI (NHN Notification Infra), a core library for LINE, and gained experience with overseas deployments and on-site debugging",
-        "Developed and contributed to the Android version of the Netty network library as open-source",
+        "Improved transmission rates (75% to 99.5%) as the lead developer for NNI (NHN Notification Infra), and gained experience with overseas deployments and on-site debugging",
+        "Developed and contributed to the Android version of the Netty network library",
         "Introduced MVP software design, significantly enhancing team performance"
       ]
     },
@@ -129,7 +129,7 @@
     {
       "institution": "Daewon Foreign Language High School",
       "url": "http://www.dwfl.hs.kr/",
-      "area": "German Language",
+      "area": "German Language Department",
       "startDate": "2000-03-01",
       "endDate": "2001-11-30"
     }
@@ -214,7 +214,7 @@
       "endDate": "2026-05-07",
       "summary": "Provided AI policy and technical advice to Gyeonggi Province",
       "highlights": [
-        "Advised on the construction of Gyeonggi Province's generative AI project and conducted technical reviews"
+        "Advised on and technically reviewed the Gyeonggi Province generative AI construction project"
       ]
     }
   ],
