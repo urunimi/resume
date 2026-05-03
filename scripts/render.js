@@ -82,6 +82,13 @@ export const PRINT_OVERRIDE_CSS = `
     justify-content: flex-start !important;
     gap: 0 !important;
   }
+  /* Education institution → match Publications paper-title compact style */
+  .education-container .section-header h3,
+  .education-container .section-header h3 a {
+    font-weight: 400 !important;
+    font-size: 12px !important;
+    line-height: 1.35 !important;
+  }
   /* Respect \\n in education area/studyType as line breaks */
   .education-container .item h4 {
     white-space: pre-line;
@@ -96,9 +103,11 @@ export const PRINT_OVERRIDE_CSS = `
   .skills-container > section + section {
     margin-top: 12px;
   }
-  /* Skill category (리더십) → bold like 데이터라이즈/서울대학교, no keyline */
+  /* Skill category (리더십) → match Publications paper-title compact style */
   .skills-container > section > .title h3 {
-    font-weight: 700;
+    font-weight: 400 !important;
+    font-size: 12px !important;
+    line-height: 1.35 !important;
   }
   .skills-container > section > .title .keyline {
     display: none;
@@ -109,6 +118,30 @@ export const PRINT_OVERRIDE_CSS = `
     font-style: italic;
     font-size: 11px !important;
     text-transform: none !important;
+  }
+  /* Publications in sidebar: compact layout for the narrow column */
+  .left-column .publications-container .item + .item {
+    margin-top: 10px;
+  }
+  .left-column .publications-container .section-header {
+    display: block !important;
+  }
+  .left-column .publications-container .section-header .pull-right {
+    display: none;
+  }
+  .left-column .publications-container .section-header h3,
+  .left-column .publications-container .section-header h3 a {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 1.35 !important;
+    text-transform: none !important;
+  }
+  .left-column .publications-container h5.awarder {
+    font-weight: 300 !important;
+    font-style: italic;
+    font-size: 11px !important;
+    text-transform: none !important;
+    margin-top: 2px;
   }
   .section-header {
     display: flex !important;
@@ -151,6 +184,10 @@ async function applyDomTransforms(page, adapted) {
       } else if (sidebar) {
         sidebar.appendChild(education);
       }
+    }
+    const publications = document.querySelector('.publications-container');
+    if (publications && sidebar) {
+      sidebar.appendChild(publications);
     }
     const skills = document.querySelector('.skills-container');
     if (skills && !skills.querySelector(':scope > .title')) {
